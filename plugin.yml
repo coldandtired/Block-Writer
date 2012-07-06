@@ -1,0 +1,48 @@
+name: Block Writer
+version: 1.1
+author: coldandtired
+main: me.coldandtired.block_writer.Main
+commands:
+    write_blocks:
+        description: Writes the text
+        permission: block_writer.can_write
+        aliases: wb
+        usage: "Usage: /<command> <text_to_write>"
+    remove_blocks:
+        description: Clears a 7-block-high corridor to the right
+        permission: block_writer.can_remove_blocks
+        aliases: rb
+        usage: "Usage: /<command> <number_of_columns_to_remove>"
+    set_material:
+        description: Allows the player to override the default material
+        permission: block_writer.can_set_material
+        aliases: sm
+        usage: "Usage: /<command> <material(:data)> [material(:data)]"
+    count_blocks:
+        description: Calculates the space needed to write the text
+        permission: block_writer.can_write
+        aliases: cb
+        usage: "Usage: /<command> <text_to_count>"
+    undo_blocks:
+        description: Undoes the last action (write or clear)
+        permission: block_writer.can_write
+        aliases: ub
+        usage: "Usage: /<command>"
+    reload_block_writer:
+        description: Reloads the config
+        permission: block_writer.can_reload_config
+        aliases: rbw
+        usage: "Usage: /<command>"
+permissions:
+    block_writer.can_write:
+        default: false
+        description: Allows writing, counting, and undoing
+    block_writer.can_remove_blocks:
+        default: false
+        description: Allows removing a grid of blocks
+    block_writer.can_reload_config:
+        default: false
+        description: Allows reloading the config
+    block_writer.can_set_material:
+        default: false
+        description: Allows changing the material used for writing
